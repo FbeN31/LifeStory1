@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.TicTacToe" parent="Base.Theme.TicTacToe" />
+
+    <style name="Theme.MyLifeStory.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MyLifeStory.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MyLifeStory.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

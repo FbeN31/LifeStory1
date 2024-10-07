@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "TicTacToe"
 include(":app")
+include(":app")
+include(":app")
+include(":app")
+include(":app")
+include(":app")
+ 
