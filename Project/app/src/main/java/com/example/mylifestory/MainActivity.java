@@ -2,6 +2,7 @@ package com.example.mylifestory;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
+            Log.e("OnActivityResult", result.toString());
             if (result.getResultCode() == RESULT_OK) {
                 Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                 try {
@@ -88,19 +90,22 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.profileImage);
         name = findViewById(R.id.nameTV);
         mail = findViewById(R.id.mailTV);
-
+        Log.e("OnCreate", "line 92");
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.client_id))
                 .requestEmail()
                 .build();
+        Log.e("OnCreate", "line 97");
         googleSignInClient = GoogleSignIn.getClient(MainActivity.this, options);
-
+        Log.e("OnCreate", "line 99");
         auth = FirebaseAuth.getInstance();
-
+        Log.e("OnCreate", "line 101");
         SignInButton signInButton = findViewById(R.id.signIn);
+        Log.e("OnCreate", "line 103");
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("OnCreate", "line 107");
                 Intent intent = googleSignInClient.getSignInIntent();
                 activityResultLauncher.launch(intent);
             }
