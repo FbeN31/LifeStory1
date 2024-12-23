@@ -35,7 +35,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private com.google.android.gms.auth.api.signin.GoogleSignInClient googleSignInClient; // Fixing the import
+    private com.google.android.gms.auth.api.signin.GoogleSignInClient googleSignInClient;
     private ShapeableImageView imageView;
     private TextView name, mail;
 
@@ -52,17 +52,20 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                // Successful sign-in
                                 Glide.with(MainActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
                                 name.setText(auth.getCurrentUser().getDisplayName());
                                 mail.setText(auth.getCurrentUser().getEmail());
                                 Toast.makeText(MainActivity.this, "Signed in successfully!", Toast.LENGTH_SHORT).show();
                             } else {
+                                // Handle sign-in failure
                                 Toast.makeText(MainActivity.this, "Failed to sign in: " + task.getException(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 } catch (ApiException e) {
-                    Log.e("SignInError", "Google Sign-In failed", e);
+                    Log.e("SignInError", "Google Sign-In failed: " + e.getStatusCode());
+                    Toast.makeText(MainActivity.this, "Sign-in failed: " + e.getStatusCode(), Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -79,11 +82,12 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance();
 
+        // UI Elements
         imageView = findViewById(R.id.profileImage);
         name = findViewById(R.id.nameTV);
         mail = findViewById(R.id.mailTV);
 
-        // Set up Google Sign-In Options
+        // Google Sign-In Options
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.client_id))  // client_id should be in strings.xml
                 .requestEmail()
@@ -102,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Initialize Buttons
+        // Initialize other buttons
         Button writeStoryBtn = findViewById(R.id.writeStoryBtn);
         Button viewStoriesBtn = findViewById(R.id.viewStoriesBtn);
         Button settingsBtn = findViewById(R.id.settingsBtn);
