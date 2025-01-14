@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- Add required permissions -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    package="com.example.mylifestory">
 
     <application
         android:allowBackup="true"
@@ -14,24 +10,34 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyLifeStory"
-        tools:targetApi="31">
-
-        <!-- Add metadata for Google Sign-In -->
-        <meta-data
-            android:name="com.google.android.gms.auth.api.signin.API_KEY"
-            android:value="@string/client_id" />
-
-        <!-- Main activity definition -->
+        android:theme="@style/Theme.MyLifeStory">
+        <activity
+            android:name=".ManageProjectsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SpeakStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpToolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpToolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PublicZoneActivity1"
+            android:exported="false" /> <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
+        </activity> <!-- Other Activities -->
+        <activity
+            android:name=".PublicZoneActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
