@@ -1,86 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!-- Profile Image -->
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profileImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:shapeAppearanceOverlay="@style/roundedImageView"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <!-- Name Text -->
-    <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Name"
-        app:layout_constraintTop_toBottomOf="@id/profileImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
-
-    <!-- Email Text -->
-    <TextView
-        android:id="@+id/mailTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="user@example.com"
-        app:layout_constraintTop_toBottomOf="@id/nameTV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <!-- Google Sign-In Button -->
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signIn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/mailTV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
-
-    <!-- Write Story Button -->
-    <Button
-        android:id="@+id/writeStoryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Write Story"
-        app:layout_constraintTop_toBottomOf="@id/signIn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp" />
 
-    <!-- View Stories Button -->
-    <Button
-        android:id="@+id/viewStoriesBtn"
+    <!-- Welcome Header -->
+    <TextView
+        android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Stories"
-        app:layout_constraintTop_toBottomOf="@id/writeStoryBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:text="LifeStory"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
 
-    <!-- Settings Button -->
+    <!-- Main Buttons -->
     <Button
-        android:id="@+id/settingsBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/publicZoneBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        app:layout_constraintTop_toBottomOf="@id/viewStoriesBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:text="Public Zone (View Stories)"
+        android:layout_marginBottom="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/helpToolBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help Tools"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/speakStoryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speak Your Story"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/manageProjectsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Your Projects"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>
