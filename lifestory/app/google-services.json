@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745690496834",
+    "project_id": "lifestory-11301",
+    "storage_bucket": "lifestory-11301.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745690496834:android:66cbff682c1b926a0952db",
+        "android_client_info": {
+          "package_name": "com.example.lifestory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATkH0qshMtSipaJXg7F3oaFFSxN8m1NL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
