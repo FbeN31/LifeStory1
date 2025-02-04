@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Lifestory"
         tools:targetApi="31">
         <activity
+            android:name=".ManageProjectsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SpeakStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpToolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PublicZoneActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
