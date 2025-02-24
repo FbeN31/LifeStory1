@@ -7,4 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".ManageProjectsActivity">
 
+    <Button
+        android:id="@+id/backToHomeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Home"
+        android:layout_marginTop="16dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

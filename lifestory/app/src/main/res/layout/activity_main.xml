@@ -30,14 +30,14 @@
         android:id="@+id/publicZoneBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Public Zone (View Stories)"
+        android:text="Public Zone"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/helpToolBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Help Tool (Writing Tools)"
+        android:text="Help Tool"
         android:layout_marginBottom="16dp" />
 
     <Button
